@@ -9,7 +9,6 @@ class MainWindow:
         self.size = size 
         self.scaledSize = tuple( i * scale for i in size )
         self.isRunning = True
-        self.surface = pygame.Surface( self.scaledSize )
         self.game = GameScreen( size )
         self.menu = MenuScreen( size )
         self.screen = self.game
@@ -21,6 +20,8 @@ class MainWindow:
         self.title = "Super Pseudo3D Game"
         pygame.display.set_caption( self.title )
         self.mainSurf = pygame.display.set_mode( self.scaledSize )
+        self.surface = pygame.Surface( self.scaledSize ).convert()
+        self.surface.set_colorkey(( 255,0, 255 ))
 
     def update( self ):
         result = self.screen.update()

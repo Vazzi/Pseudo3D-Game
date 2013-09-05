@@ -6,5 +6,3 @@ class Screen( object ):
         self.screen = None 
         self.image = pygame.Surface( self.size )
 
-
-        
