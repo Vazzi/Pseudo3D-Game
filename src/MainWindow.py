@@ -33,6 +33,9 @@ class MainWindow:
                 self.screen = self.menu;
             elif isinstance(self.screen, MenuScreen ) == True:
                 self.screen = self.game;
+        elif result == 3:
+            self.screen = self.game;
+            self.screen.restart()
         return True
 
     def render( self ):
